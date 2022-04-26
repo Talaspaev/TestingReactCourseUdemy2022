@@ -31,7 +31,7 @@ test("initial conditions", () => {
   expect(checkbox).not.toBeChecked();
 });
 
-test("initial conditions with disable  check", () => {
+test("initial conditions with disable  checked", () => {
   render(<App />);
 
   const colorButton = screen.getByRole("button", { name: "Change to blue" });
