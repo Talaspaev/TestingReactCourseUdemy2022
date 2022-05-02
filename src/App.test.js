@@ -48,7 +48,7 @@ test("initial conditions with disable button checked", () => {
   expect(colorButton).toBeDisabled();
 
   fireEvent.click(checkbox);
-  expect(colorButton).toBeEnabled();
+  expect(colorButton).toBeDisabled();
 });
 
 test("Disable button has gray backround and reverts to MediumVioletRed", () => {
@@ -69,7 +69,7 @@ test("Clicked disable button has gray backround and reverts to MidnightBlue", ()
   const colorButton = screen.getByRole("button", {
     name: "Change to Midnight Blue",
   });
-  const checkbox = screen.getByRole("checkbox", { name: "Disable button" });
+  const checkbox =screen.getByRole("checkbox", { name: "Disable button" });
 
   fireEvent.click(colorButton);
   fireEvent.click(checkbox);
