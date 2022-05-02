@@ -7,7 +7,9 @@ test("button has correct initial color", () => {
   render(<App />);
 
   // find element with role of button and text of 'Change to MidnightBlue'
-  const colorButton = screen.getByRole("button", { name: "Change to Midnight Blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
 
   //expect the background- is MediumVioletRed
   expect(colorButton).toHaveStyle({ backgroundColor: "MediumVioletRed" });
@@ -20,12 +22,14 @@ test("button has correct initial color", () => {
   expect(colorButton).toHaveStyle({ backgroundColor: "MidnightBlue" });
 
   // check element with text of 'Change to Medium Violet Red'
-  expect(colorButton.textContent).toBe("Change to Medium Violet Red");
+  expect(colorButton).toHaveTextContent("Change to Medium Violet Red");
 });
 
 test("initial conditions", () => {
   render(<App />);
-  const colorButton = screen.getByRole("button", { name: "Change to Midnight Blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
   expect(colorButton).toBeEnabled();
 
   const checkbox = screen.getByRole("checkbox");
@@ -35,7 +39,9 @@ test("initial conditions", () => {
 test("initial conditions with disable button checked", () => {
   render(<App />);
 
-  const colorButton = screen.getByRole("button", { name: "Change to Midnight Blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
   const checkbox = screen.getByRole("checkbox", { name: "Disable button" });
 
   fireEvent.click(checkbox);
@@ -47,7 +53,9 @@ test("initial conditions with disable button checked", () => {
 
 test("Disable button has gray backround and reverts to MediumVioletRed", () => {
   render(<App />);
-  const colorButton = screen.getByRole("button", { name: "Change to Midnight Blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
   const checkbox = screen.getByRole("checkbox", { name: "Disable button" });
 
   fireEvent.click(checkbox);
@@ -58,7 +66,9 @@ test("Disable button has gray backround and reverts to MediumVioletRed", () => {
 
 test("Clicked disable button has gray backround and reverts to MidnightBlue", () => {
   render(<App />);
-  const colorButton = screen.getByRole("button", { name: "Change to Midnight Blue" });
+  const colorButton = screen.getByRole("button", {
+    name: "Change to Midnight Blue",
+  });
   const checkbox = screen.getByRole("checkbox", { name: "Disable button" });
 
   fireEvent.click(colorButton);
